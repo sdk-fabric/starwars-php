@@ -14,18 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class PlanetTag extends TagAbstract
 {
     /**
-     * @param string|null $name
+     * @param string|null $search
      * @return PlanetCollection
      * @throws ClientException
      */
-    public function getAll(?string $name = null): PlanetCollection
+    public function getAll(?string $search = null): PlanetCollection
     {
         $url = $this->parser->url('/planets', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'name' => $name,
+                'search' => $search,
             ], [
             ]),
         ];

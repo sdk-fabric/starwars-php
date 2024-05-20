@@ -14,18 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class FilmTag extends TagAbstract
 {
     /**
-     * @param string|null $title
+     * @param string|null $search
      * @return FilmCollection
      * @throws ClientException
      */
-    public function getAll(?string $title = null): FilmCollection
+    public function getAll(?string $search = null): FilmCollection
     {
         $url = $this->parser->url('/films', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'title' => $title,
+                'search' => $search,
             ], [
             ]),
         ];

@@ -14,20 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class VehicleTag extends TagAbstract
 {
     /**
-     * @param string|null $name
-     * @param string|null $model
+     * @param string|null $search
      * @return VehicleCollection
      * @throws ClientException
      */
-    public function getAll(?string $name = null, ?string $model = null): VehicleCollection
+    public function getAll(?string $search = null): VehicleCollection
     {
         $url = $this->parser->url('/vehicles', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'name' => $name,
-                'model' => $model,
+                'search' => $search,
             ], [
             ]),
         ];

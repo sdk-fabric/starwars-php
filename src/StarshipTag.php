@@ -14,20 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class StarshipTag extends TagAbstract
 {
     /**
-     * @param string|null $name
-     * @param string|null $model
+     * @param string|null $search
      * @return StarshipCollection
      * @throws ClientException
      */
-    public function getAll(?string $name = null, ?string $model = null): StarshipCollection
+    public function getAll(?string $search = null): StarshipCollection
     {
         $url = $this->parser->url('/starships', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'name' => $name,
-                'model' => $model,
+                'search' => $search,
             ], [
             ]),
         ];

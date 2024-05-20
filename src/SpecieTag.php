@@ -14,18 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class SpecieTag extends TagAbstract
 {
     /**
-     * @param string|null $name
+     * @param string|null $search
      * @return SpecieCollection
      * @throws ClientException
      */
-    public function getAll(?string $name = null): SpecieCollection
+    public function getAll(?string $search = null): SpecieCollection
     {
         $url = $this->parser->url('/species', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'name' => $name,
+                'search' => $search,
             ], [
             ]),
         ];

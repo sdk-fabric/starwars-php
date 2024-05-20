@@ -14,18 +14,18 @@ use Sdkgen\Client\TagAbstract;
 class PeopleTag extends TagAbstract
 {
     /**
-     * @param string|null $name
+     * @param string|null $search
      * @return PeopleCollection
      * @throws ClientException
      */
-    public function getAll(?string $name = null): PeopleCollection
+    public function getAll(?string $search = null): PeopleCollection
     {
         $url = $this->parser->url('/people', [
         ]);
 
         $options = [
             'query' => $this->parser->query([
-                'name' => $name,
+                'search' => $search,
             ], [
             ]),
         ];
