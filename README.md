@@ -23,7 +23,7 @@ The following example shows how you initialize the client:
 
 require __DIR__ . '/vendor/autoload.php';
 
-$client = new \SdkFabric\SdkFabric\Starwars\Client::build('[access_token]');
+$client = new \SdkFabric\Starwars\Client::build('[access_token]');
 
 // @TODO use the client
 
