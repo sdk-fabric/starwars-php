@@ -3,7 +3,7 @@
   "require": {
     "sdkfabric/starwars": {
       "target": "./src",
-      "namespace": "SdkFabric\Starwars"
+      "namespace": "SdkFabric\\Starwars"
     }
   }
 }
