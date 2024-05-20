@@ -14,6 +14,8 @@ use Sdkgen\Client\TagAbstract;
 class FilmTag extends TagAbstract
 {
     /**
+     * Get all the film resources
+     *
      * @param string|null $search
      * @return FilmCollection
      * @throws ClientException
@@ -50,6 +52,8 @@ class FilmTag extends TagAbstract
     }
 
     /**
+     * Get a specific film resource
+     *
      * @param string $id
      * @return Film
      * @throws ClientException

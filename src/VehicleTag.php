@@ -14,6 +14,8 @@ use Sdkgen\Client\TagAbstract;
 class VehicleTag extends TagAbstract
 {
     /**
+     * Get all the vehicle resources
+     *
      * @param string|null $search
      * @return VehicleCollection
      * @throws ClientException
@@ -50,6 +52,8 @@ class VehicleTag extends TagAbstract
     }
 
     /**
+     * Get a specific vehicle resource
+     *
      * @param string $id
      * @return Vehicle
      * @throws ClientException

@@ -14,6 +14,8 @@ use Sdkgen\Client\TagAbstract;
 class PlanetTag extends TagAbstract
 {
     /**
+     * Get all the planets resources
+     *
      * @param string|null $search
      * @return PlanetCollection
      * @throws ClientException
@@ -50,6 +52,8 @@ class PlanetTag extends TagAbstract
     }
 
     /**
+     * Get a specific planets resource
+     *
      * @param string $id
      * @return Planet
      * @throws ClientException

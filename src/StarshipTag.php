@@ -14,6 +14,8 @@ use Sdkgen\Client\TagAbstract;
 class StarshipTag extends TagAbstract
 {
     /**
+     * Get all the starship resources
+     *
      * @param string|null $search
      * @return StarshipCollection
      * @throws ClientException
@@ -50,6 +52,8 @@ class StarshipTag extends TagAbstract
     }
 
     /**
+     * Get a specific starship resource
+     *
      * @param string $id
      * @return Starship
      * @throws ClientException
