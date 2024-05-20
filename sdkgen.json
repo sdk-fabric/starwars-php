@@ -1,0 +1,9 @@
+{
+  "type": "client-php",
+  "require": {
+    "sdkfabric/starwars": {
+      "target": "./src",
+      "namespace": "SdkFabric\Starwars"
+    }
+  }
+}
