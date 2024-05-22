@@ -52,7 +52,7 @@ class SpecieTag extends TagAbstract
     }
 
     /**
-     * Get a specific specie
+     * Get a specific species
      *
      * @param string $id
      * @return Specie

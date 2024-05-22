@@ -66,8 +66,8 @@ class Client extends ClientAbstract
 
 
 
-    public static function build(CredentialsInterface $credentials): self
+    public static function build(): self
     {
-        return new self('https://swapi.dev/api', $credentials);
+        return new self('https://swapi.dev/api', new Credentials\Anonymous());
     }
 }
