@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A Film resource is a single film.')]
+#[Description('A Film is a single film.')]
 class Film implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]

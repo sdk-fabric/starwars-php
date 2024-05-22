@@ -14,7 +14,7 @@ use Sdkgen\Client\TagAbstract;
 class PeopleTag extends TagAbstract
 {
     /**
-     * Get all the people resources
+     * Get all the people
      *
      * @param string|null $search
      * @return PeopleCollection
@@ -52,7 +52,7 @@ class PeopleTag extends TagAbstract
     }
 
     /**
-     * Get a specific people resource
+     * Get a specific people
      *
      * @param string $id
      * @return People

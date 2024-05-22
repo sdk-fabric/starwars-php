@@ -14,7 +14,7 @@ use Sdkgen\Client\TagAbstract;
 class SpecieTag extends TagAbstract
 {
     /**
-     * Get all the species resources
+     * Get all the species
      *
      * @param string|null $search
      * @return SpecieCollection
@@ -52,7 +52,7 @@ class SpecieTag extends TagAbstract
     }
 
     /**
-     * Get a specific species resource
+     * Get a specific specie
      *
      * @param string $id
      * @return Specie

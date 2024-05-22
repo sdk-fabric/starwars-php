@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A Vehicle resource is a single transport craft that does not have hyperdrive capability.')]
+#[Description('A Vehicle is a single transport craft that does not have hyperdrive capability.')]
 class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]

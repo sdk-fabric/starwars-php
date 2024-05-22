@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A People resource is an individual person or character within the Star Wars universe.')]
+#[Description('A People is an individual person or character within the Star Wars universe.')]
 class People implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]

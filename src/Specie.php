@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A Species resource is a type of person or character within the Star Wars Universe.')]
+#[Description('A Species is a type of person or character within the Star Wars Universe.')]
 class Specie implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]
