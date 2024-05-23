@@ -40,17 +40,17 @@ class Client extends ClientAbstract
         );
     }
 
-    public function vehicle(): VehicleTag
+    public function species(): SpeciesTag
     {
-        return new VehicleTag(
+        return new SpeciesTag(
             $this->httpClient,
             $this->parser
         );
     }
 
-    public function specie(): SpecieTag
+    public function vehicle(): VehicleTag
     {
-        return new SpecieTag(
+        return new VehicleTag(
             $this->httpClient,
             $this->parser
         );
