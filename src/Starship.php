@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A Starship is a single transport craft that has hyperdrive capability.')]
+#[Description('A Starship is a single transport craft that has hyperdrive capability')]
 class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]

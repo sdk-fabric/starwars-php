@@ -9,7 +9,7 @@ namespace SdkFabric\Starwars;
 use PSX\Schema\Attribute\Description;
 use PSX\Schema\Attribute\Key;
 
-#[Description('A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY.')]
+#[Description('A Planet is a large mass, planet or planetoid in the Star Wars Universe, at the time of 0 ABY')]
 class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]
