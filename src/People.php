@@ -12,18 +12,18 @@ use PSX\Schema\Attribute\Key;
 #[Description('A People is an individual person or character within the Star Wars universe')]
 class People implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('')]
+    #[Description('The name of this person.')]
     protected ?string $name = null;
     #[Key('birth_year')]
-    #[Description('')]
+    #[Description('The birth year of the person, using the in-universe standard of BBY or ABY - Before the Battle of Yavin or After the Battle of Yavin. The Battle of Yavin is a battle that occurs at the end of Star Wars episode IV: A New Hope.')]
     protected ?string $birthYear = null;
     #[Key('eye_color')]
-    #[Description('')]
+    #[Description('The eye color of this person. Will be "unknown" if not known or "n/a" if the person does not have an eye.')]
     protected ?string $eyeColor = null;
-    #[Description('')]
+    #[Description('The gender of this person. Either "Male", "Female" or "unknown", "n/a" if the person does not have a gender.')]
     protected ?string $gender = null;
     #[Key('hair_color')]
-    #[Description('')]
+    #[Description('The hair color of this person. Will be "unknown" if not known or "n/a" if the person does not have hair.')]
     protected ?string $hairColor = null;
     #[Description('')]
     protected ?string $height = null;
