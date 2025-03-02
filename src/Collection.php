@@ -17,31 +17,31 @@ class Collection implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?string $next = null;
     #[Description('')]
     protected ?string $previous = null;
-    public function setCount(?int $count) : void
+    public function setCount(?int $count): void
     {
         $this->count = $count;
     }
-    public function getCount() : ?int
+    public function getCount(): ?int
     {
         return $this->count;
     }
-    public function setNext(?string $next) : void
+    public function setNext(?string $next): void
     {
         $this->next = $next;
     }
-    public function getNext() : ?string
+    public function getNext(): ?string
     {
         return $this->next;
     }
-    public function setPrevious(?string $previous) : void
+    public function setPrevious(?string $previous): void
     {
         $this->previous = $previous;
     }
-    public function getPrevious() : ?string
+    public function getPrevious(): ?string
     {
         return $this->previous;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -50,7 +50,7 @@ class Collection implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('previous', $this->previous);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

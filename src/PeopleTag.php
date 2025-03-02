@@ -39,7 +39,7 @@ class PeopleTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, PeopleCollection::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(PeopleCollection::class));
 
             return $data;
         } catch (ClientException $e) {
@@ -79,7 +79,7 @@ class PeopleTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, People::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(People::class));
 
             return $data;
         } catch (ClientException $e) {

@@ -23,55 +23,55 @@ class Root implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?string $starships = null;
     #[Description('')]
     protected ?string $vehicles = null;
-    public function setFilms(?string $films) : void
+    public function setFilms(?string $films): void
     {
         $this->films = $films;
     }
-    public function getFilms() : ?string
+    public function getFilms(): ?string
     {
         return $this->films;
     }
-    public function setPeople(?string $people) : void
+    public function setPeople(?string $people): void
     {
         $this->people = $people;
     }
-    public function getPeople() : ?string
+    public function getPeople(): ?string
     {
         return $this->people;
     }
-    public function setPlanets(?string $planets) : void
+    public function setPlanets(?string $planets): void
     {
         $this->planets = $planets;
     }
-    public function getPlanets() : ?string
+    public function getPlanets(): ?string
     {
         return $this->planets;
     }
-    public function setSpecies(?string $species) : void
+    public function setSpecies(?string $species): void
     {
         $this->species = $species;
     }
-    public function getSpecies() : ?string
+    public function getSpecies(): ?string
     {
         return $this->species;
     }
-    public function setStarships(?string $starships) : void
+    public function setStarships(?string $starships): void
     {
         $this->starships = $starships;
     }
-    public function getStarships() : ?string
+    public function getStarships(): ?string
     {
         return $this->starships;
     }
-    public function setVehicles(?string $vehicles) : void
+    public function setVehicles(?string $vehicles): void
     {
         $this->vehicles = $vehicles;
     }
-    public function getVehicles() : ?string
+    public function getVehicles(): ?string
     {
         return $this->vehicles;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -83,7 +83,7 @@ class Root implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('vehicles', $this->vehicles);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

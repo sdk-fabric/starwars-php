@@ -12,195 +12,195 @@ use PSX\Schema\Attribute\Key;
 #[Description('A Film is a single film')]
 class Film implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('')]
+    #[Description('The title of this film')]
     protected ?string $title = null;
     #[Key('episode_id')]
-    #[Description('')]
+    #[Description('The episode number of this film')]
     protected ?int $episodeId = null;
     #[Key('opening_crawl')]
-    #[Description('')]
+    #[Description('The opening paragraphs at the beginning of this film')]
     protected ?string $openingCrawl = null;
-    #[Description('')]
+    #[Description('The name of the director of this film')]
     protected ?string $director = null;
-    #[Description('')]
+    #[Description('The name(s) of the producer(s) of this film. Comma separated')]
     protected ?string $producer = null;
     #[Key('release_date')]
-    #[Description('')]
+    #[Description('The ISO 8601 date format of film release at original creator country')]
     protected ?\PSX\DateTime\LocalDate $releaseDate = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of species resource URLs that are in this film')]
     protected ?array $species = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of starship resource URLs that are in this film')]
     protected ?array $starships = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of vehicle resource URLs that are in this film')]
     protected ?array $vehicles = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of people resource URLs that are in this film')]
     protected ?array $characters = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of planet resource URLs that are in this film')]
     protected ?array $planets = null;
-    #[Description('')]
+    #[Description('The hypermedia URL of this resource')]
     protected ?string $url = null;
-    #[Description('')]
+    #[Description('The ISO 8601 date format of the time that this resource was created')]
     protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('')]
+    #[Description('The ISO 8601 date format of the time that this resource was edited')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setTitle(?string $title) : void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
-    public function getTitle() : ?string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
-    public function setEpisodeId(?int $episodeId) : void
+    public function setEpisodeId(?int $episodeId): void
     {
         $this->episodeId = $episodeId;
     }
-    public function getEpisodeId() : ?int
+    public function getEpisodeId(): ?int
     {
         return $this->episodeId;
     }
-    public function setOpeningCrawl(?string $openingCrawl) : void
+    public function setOpeningCrawl(?string $openingCrawl): void
     {
         $this->openingCrawl = $openingCrawl;
     }
-    public function getOpeningCrawl() : ?string
+    public function getOpeningCrawl(): ?string
     {
         return $this->openingCrawl;
     }
-    public function setDirector(?string $director) : void
+    public function setDirector(?string $director): void
     {
         $this->director = $director;
     }
-    public function getDirector() : ?string
+    public function getDirector(): ?string
     {
         return $this->director;
     }
-    public function setProducer(?string $producer) : void
+    public function setProducer(?string $producer): void
     {
         $this->producer = $producer;
     }
-    public function getProducer() : ?string
+    public function getProducer(): ?string
     {
         return $this->producer;
     }
-    public function setReleaseDate(?\PSX\DateTime\LocalDate $releaseDate) : void
+    public function setReleaseDate(?\PSX\DateTime\LocalDate $releaseDate): void
     {
         $this->releaseDate = $releaseDate;
     }
-    public function getReleaseDate() : ?\PSX\DateTime\LocalDate
+    public function getReleaseDate(): ?\PSX\DateTime\LocalDate
     {
         return $this->releaseDate;
     }
     /**
      * @param array<string>|null $species
      */
-    public function setSpecies(?array $species) : void
+    public function setSpecies(?array $species): void
     {
         $this->species = $species;
     }
     /**
      * @return array<string>|null
      */
-    public function getSpecies() : ?array
+    public function getSpecies(): ?array
     {
         return $this->species;
     }
     /**
      * @param array<string>|null $starships
      */
-    public function setStarships(?array $starships) : void
+    public function setStarships(?array $starships): void
     {
         $this->starships = $starships;
     }
     /**
      * @return array<string>|null
      */
-    public function getStarships() : ?array
+    public function getStarships(): ?array
     {
         return $this->starships;
     }
     /**
      * @param array<string>|null $vehicles
      */
-    public function setVehicles(?array $vehicles) : void
+    public function setVehicles(?array $vehicles): void
     {
         $this->vehicles = $vehicles;
     }
     /**
      * @return array<string>|null
      */
-    public function getVehicles() : ?array
+    public function getVehicles(): ?array
     {
         return $this->vehicles;
     }
     /**
      * @param array<string>|null $characters
      */
-    public function setCharacters(?array $characters) : void
+    public function setCharacters(?array $characters): void
     {
         $this->characters = $characters;
     }
     /**
      * @return array<string>|null
      */
-    public function getCharacters() : ?array
+    public function getCharacters(): ?array
     {
         return $this->characters;
     }
     /**
      * @param array<string>|null $planets
      */
-    public function setPlanets(?array $planets) : void
+    public function setPlanets(?array $planets): void
     {
         $this->planets = $planets;
     }
     /**
      * @return array<string>|null
      */
-    public function getPlanets() : ?array
+    public function getPlanets(): ?array
     {
         return $this->planets;
     }
-    public function setUrl(?string $url) : void
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
     }
-    public function getUrl() : ?string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created) : void
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
     {
         $this->created = $created;
     }
-    public function getCreated() : ?\PSX\DateTime\LocalDateTime
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->created;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited) : void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
         $this->edited = $edited;
     }
-    public function getEdited() : ?\PSX\DateTime\LocalDateTime
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->edited;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -220,7 +220,7 @@ class Film implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('edited', $this->edited);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

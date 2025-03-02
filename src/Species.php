@@ -53,139 +53,139 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?\PSX\DateTime\LocalDateTime $created = null;
     #[Description('')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name) : void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
-    public function setClassification(?string $classification) : void
+    public function setClassification(?string $classification): void
     {
         $this->classification = $classification;
     }
-    public function getClassification() : ?string
+    public function getClassification(): ?string
     {
         return $this->classification;
     }
-    public function setDesignation(?string $designation) : void
+    public function setDesignation(?string $designation): void
     {
         $this->designation = $designation;
     }
-    public function getDesignation() : ?string
+    public function getDesignation(): ?string
     {
         return $this->designation;
     }
-    public function setAverageHeight(?string $averageHeight) : void
+    public function setAverageHeight(?string $averageHeight): void
     {
         $this->averageHeight = $averageHeight;
     }
-    public function getAverageHeight() : ?string
+    public function getAverageHeight(): ?string
     {
         return $this->averageHeight;
     }
-    public function setAverageLifespan(?string $averageLifespan) : void
+    public function setAverageLifespan(?string $averageLifespan): void
     {
         $this->averageLifespan = $averageLifespan;
     }
-    public function getAverageLifespan() : ?string
+    public function getAverageLifespan(): ?string
     {
         return $this->averageLifespan;
     }
-    public function setEyeColors(?string $eyeColors) : void
+    public function setEyeColors(?string $eyeColors): void
     {
         $this->eyeColors = $eyeColors;
     }
-    public function getEyeColors() : ?string
+    public function getEyeColors(): ?string
     {
         return $this->eyeColors;
     }
-    public function setHairColors(?string $hairColors) : void
+    public function setHairColors(?string $hairColors): void
     {
         $this->hairColors = $hairColors;
     }
-    public function getHairColors() : ?string
+    public function getHairColors(): ?string
     {
         return $this->hairColors;
     }
-    public function setSkinColors(?string $skinColors) : void
+    public function setSkinColors(?string $skinColors): void
     {
         $this->skinColors = $skinColors;
     }
-    public function getSkinColors() : ?string
+    public function getSkinColors(): ?string
     {
         return $this->skinColors;
     }
-    public function setLanguage(?string $language) : void
+    public function setLanguage(?string $language): void
     {
         $this->language = $language;
     }
-    public function getLanguage() : ?string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
-    public function setHomeworld(?string $homeworld) : void
+    public function setHomeworld(?string $homeworld): void
     {
         $this->homeworld = $homeworld;
     }
-    public function getHomeworld() : ?string
+    public function getHomeworld(): ?string
     {
         return $this->homeworld;
     }
     /**
      * @param array<string>|null $people
      */
-    public function setPeople(?array $people) : void
+    public function setPeople(?array $people): void
     {
         $this->people = $people;
     }
     /**
      * @return array<string>|null
      */
-    public function getPeople() : ?array
+    public function getPeople(): ?array
     {
         return $this->people;
     }
     /**
      * @param array<string>|null $films
      */
-    public function setFilms(?array $films) : void
+    public function setFilms(?array $films): void
     {
         $this->films = $films;
     }
     /**
      * @return array<string>|null
      */
-    public function getFilms() : ?array
+    public function getFilms(): ?array
     {
         return $this->films;
     }
-    public function setUrl(?string $url) : void
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
     }
-    public function getUrl() : ?string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created) : void
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
     {
         $this->created = $created;
     }
-    public function getCreated() : ?\PSX\DateTime\LocalDateTime
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->created;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited) : void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
         $this->edited = $edited;
     }
-    public function getEdited() : ?\PSX\DateTime\LocalDateTime
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->edited;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -206,7 +206,7 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('edited', $this->edited);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

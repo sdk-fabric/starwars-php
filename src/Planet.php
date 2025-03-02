@@ -49,131 +49,131 @@ class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?\PSX\DateTime\LocalDateTime $created = null;
     #[Description('')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name) : void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
-    public function setDiameter(?string $diameter) : void
+    public function setDiameter(?string $diameter): void
     {
         $this->diameter = $diameter;
     }
-    public function getDiameter() : ?string
+    public function getDiameter(): ?string
     {
         return $this->diameter;
     }
-    public function setRotationPeriod(?string $rotationPeriod) : void
+    public function setRotationPeriod(?string $rotationPeriod): void
     {
         $this->rotationPeriod = $rotationPeriod;
     }
-    public function getRotationPeriod() : ?string
+    public function getRotationPeriod(): ?string
     {
         return $this->rotationPeriod;
     }
-    public function setOrbitalPeriod(?string $orbitalPeriod) : void
+    public function setOrbitalPeriod(?string $orbitalPeriod): void
     {
         $this->orbitalPeriod = $orbitalPeriod;
     }
-    public function getOrbitalPeriod() : ?string
+    public function getOrbitalPeriod(): ?string
     {
         return $this->orbitalPeriod;
     }
-    public function setGravity(?string $gravity) : void
+    public function setGravity(?string $gravity): void
     {
         $this->gravity = $gravity;
     }
-    public function getGravity() : ?string
+    public function getGravity(): ?string
     {
         return $this->gravity;
     }
-    public function setPopulation(?string $population) : void
+    public function setPopulation(?string $population): void
     {
         $this->population = $population;
     }
-    public function getPopulation() : ?string
+    public function getPopulation(): ?string
     {
         return $this->population;
     }
-    public function setClimate(?string $climate) : void
+    public function setClimate(?string $climate): void
     {
         $this->climate = $climate;
     }
-    public function getClimate() : ?string
+    public function getClimate(): ?string
     {
         return $this->climate;
     }
-    public function setTerrain(?string $terrain) : void
+    public function setTerrain(?string $terrain): void
     {
         $this->terrain = $terrain;
     }
-    public function getTerrain() : ?string
+    public function getTerrain(): ?string
     {
         return $this->terrain;
     }
-    public function setSurfaceWater(?string $surfaceWater) : void
+    public function setSurfaceWater(?string $surfaceWater): void
     {
         $this->surfaceWater = $surfaceWater;
     }
-    public function getSurfaceWater() : ?string
+    public function getSurfaceWater(): ?string
     {
         return $this->surfaceWater;
     }
     /**
      * @param array<string>|null $residents
      */
-    public function setResidents(?array $residents) : void
+    public function setResidents(?array $residents): void
     {
         $this->residents = $residents;
     }
     /**
      * @return array<string>|null
      */
-    public function getResidents() : ?array
+    public function getResidents(): ?array
     {
         return $this->residents;
     }
     /**
      * @param array<string>|null $films
      */
-    public function setFilms(?array $films) : void
+    public function setFilms(?array $films): void
     {
         $this->films = $films;
     }
     /**
      * @return array<string>|null
      */
-    public function getFilms() : ?array
+    public function getFilms(): ?array
     {
         return $this->films;
     }
-    public function setUrl(?string $url) : void
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
     }
-    public function getUrl() : ?string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created) : void
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
     {
         $this->created = $created;
     }
-    public function getCreated() : ?\PSX\DateTime\LocalDateTime
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->created;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited) : void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
         $this->edited = $edited;
     }
-    public function getEdited() : ?\PSX\DateTime\LocalDateTime
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->edited;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -193,7 +193,7 @@ class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('edited', $this->edited);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

@@ -39,7 +39,7 @@ class SpeciesTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, SpeciesCollection::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(SpeciesCollection::class));
 
             return $data;
         } catch (ClientException $e) {
@@ -79,7 +79,7 @@ class SpeciesTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, Species::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Species::class));
 
             return $data;
         } catch (ClientException $e) {

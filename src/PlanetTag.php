@@ -39,7 +39,7 @@ class PlanetTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, PlanetCollection::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(PlanetCollection::class));
 
             return $data;
         } catch (ClientException $e) {
@@ -79,7 +79,7 @@ class PlanetTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, Planet::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Planet::class));
 
             return $data;
         } catch (ClientException $e) {

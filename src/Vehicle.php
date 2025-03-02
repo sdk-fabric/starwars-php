@@ -54,147 +54,147 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?\PSX\DateTime\LocalDateTime $created = null;
     #[Description('')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name) : void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
-    public function setModel(?string $model) : void
+    public function setModel(?string $model): void
     {
         $this->model = $model;
     }
-    public function getModel() : ?string
+    public function getModel(): ?string
     {
         return $this->model;
     }
-    public function setVehicleClass(?string $vehicleClass) : void
+    public function setVehicleClass(?string $vehicleClass): void
     {
         $this->vehicleClass = $vehicleClass;
     }
-    public function getVehicleClass() : ?string
+    public function getVehicleClass(): ?string
     {
         return $this->vehicleClass;
     }
-    public function setManufacturer(?string $manufacturer) : void
+    public function setManufacturer(?string $manufacturer): void
     {
         $this->manufacturer = $manufacturer;
     }
-    public function getManufacturer() : ?string
+    public function getManufacturer(): ?string
     {
         return $this->manufacturer;
     }
-    public function setLength(?string $length) : void
+    public function setLength(?string $length): void
     {
         $this->length = $length;
     }
-    public function getLength() : ?string
+    public function getLength(): ?string
     {
         return $this->length;
     }
-    public function setCostInCredits(?string $costInCredits) : void
+    public function setCostInCredits(?string $costInCredits): void
     {
         $this->costInCredits = $costInCredits;
     }
-    public function getCostInCredits() : ?string
+    public function getCostInCredits(): ?string
     {
         return $this->costInCredits;
     }
-    public function setCrew(?string $crew) : void
+    public function setCrew(?string $crew): void
     {
         $this->crew = $crew;
     }
-    public function getCrew() : ?string
+    public function getCrew(): ?string
     {
         return $this->crew;
     }
-    public function setPassengers(?string $passengers) : void
+    public function setPassengers(?string $passengers): void
     {
         $this->passengers = $passengers;
     }
-    public function getPassengers() : ?string
+    public function getPassengers(): ?string
     {
         return $this->passengers;
     }
-    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed) : void
+    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed): void
     {
         $this->maxAtmospheringSpeed = $maxAtmospheringSpeed;
     }
-    public function getMaxAtmospheringSpeed() : ?string
+    public function getMaxAtmospheringSpeed(): ?string
     {
         return $this->maxAtmospheringSpeed;
     }
-    public function setCargoCapacity(?string $cargoCapacity) : void
+    public function setCargoCapacity(?string $cargoCapacity): void
     {
         $this->cargoCapacity = $cargoCapacity;
     }
-    public function getCargoCapacity() : ?string
+    public function getCargoCapacity(): ?string
     {
         return $this->cargoCapacity;
     }
-    public function setConsumables(?string $consumables) : void
+    public function setConsumables(?string $consumables): void
     {
         $this->consumables = $consumables;
     }
-    public function getConsumables() : ?string
+    public function getConsumables(): ?string
     {
         return $this->consumables;
     }
     /**
      * @param array<string>|null $films
      */
-    public function setFilms(?array $films) : void
+    public function setFilms(?array $films): void
     {
         $this->films = $films;
     }
     /**
      * @return array<string>|null
      */
-    public function getFilms() : ?array
+    public function getFilms(): ?array
     {
         return $this->films;
     }
     /**
      * @param array<string>|null $pilots
      */
-    public function setPilots(?array $pilots) : void
+    public function setPilots(?array $pilots): void
     {
         $this->pilots = $pilots;
     }
     /**
      * @return array<string>|null
      */
-    public function getPilots() : ?array
+    public function getPilots(): ?array
     {
         return $this->pilots;
     }
-    public function setUrl(?string $url) : void
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
     }
-    public function getUrl() : ?string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created) : void
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
     {
         $this->created = $created;
     }
-    public function getCreated() : ?\PSX\DateTime\LocalDateTime
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->created;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited) : void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
         $this->edited = $edited;
     }
-    public function getEdited() : ?\PSX\DateTime\LocalDateTime
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->edited;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -216,7 +216,7 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('edited', $this->edited);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

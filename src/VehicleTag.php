@@ -39,7 +39,7 @@ class VehicleTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, VehicleCollection::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(VehicleCollection::class));
 
             return $data;
         } catch (ClientException $e) {
@@ -79,7 +79,7 @@ class VehicleTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, Vehicle::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Vehicle::class));
 
             return $data;
         } catch (ClientException $e) {

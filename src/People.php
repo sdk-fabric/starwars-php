@@ -60,159 +60,159 @@ class People implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?\PSX\DateTime\LocalDateTime $created = null;
     #[Description('The ISO 8601 date format of the time that this resource was edited. Search Fields:')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name) : void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
-    public function setBirthYear(?string $birthYear) : void
+    public function setBirthYear(?string $birthYear): void
     {
         $this->birthYear = $birthYear;
     }
-    public function getBirthYear() : ?string
+    public function getBirthYear(): ?string
     {
         return $this->birthYear;
     }
-    public function setEyeColor(?string $eyeColor) : void
+    public function setEyeColor(?string $eyeColor): void
     {
         $this->eyeColor = $eyeColor;
     }
-    public function getEyeColor() : ?string
+    public function getEyeColor(): ?string
     {
         return $this->eyeColor;
     }
-    public function setGender(?string $gender) : void
+    public function setGender(?string $gender): void
     {
         $this->gender = $gender;
     }
-    public function getGender() : ?string
+    public function getGender(): ?string
     {
         return $this->gender;
     }
-    public function setHairColor(?string $hairColor) : void
+    public function setHairColor(?string $hairColor): void
     {
         $this->hairColor = $hairColor;
     }
-    public function getHairColor() : ?string
+    public function getHairColor(): ?string
     {
         return $this->hairColor;
     }
-    public function setHeight(?string $height) : void
+    public function setHeight(?string $height): void
     {
         $this->height = $height;
     }
-    public function getHeight() : ?string
+    public function getHeight(): ?string
     {
         return $this->height;
     }
-    public function setMass(?string $mass) : void
+    public function setMass(?string $mass): void
     {
         $this->mass = $mass;
     }
-    public function getMass() : ?string
+    public function getMass(): ?string
     {
         return $this->mass;
     }
-    public function setSkinColor(?string $skinColor) : void
+    public function setSkinColor(?string $skinColor): void
     {
         $this->skinColor = $skinColor;
     }
-    public function getSkinColor() : ?string
+    public function getSkinColor(): ?string
     {
         return $this->skinColor;
     }
-    public function setHomeworld(?string $homeworld) : void
+    public function setHomeworld(?string $homeworld): void
     {
         $this->homeworld = $homeworld;
     }
-    public function getHomeworld() : ?string
+    public function getHomeworld(): ?string
     {
         return $this->homeworld;
     }
     /**
      * @param array<string>|null $films
      */
-    public function setFilms(?array $films) : void
+    public function setFilms(?array $films): void
     {
         $this->films = $films;
     }
     /**
      * @return array<string>|null
      */
-    public function getFilms() : ?array
+    public function getFilms(): ?array
     {
         return $this->films;
     }
     /**
      * @param array<string>|null $species
      */
-    public function setSpecies(?array $species) : void
+    public function setSpecies(?array $species): void
     {
         $this->species = $species;
     }
     /**
      * @return array<string>|null
      */
-    public function getSpecies() : ?array
+    public function getSpecies(): ?array
     {
         return $this->species;
     }
     /**
      * @param array<string>|null $starships
      */
-    public function setStarships(?array $starships) : void
+    public function setStarships(?array $starships): void
     {
         $this->starships = $starships;
     }
     /**
      * @return array<string>|null
      */
-    public function getStarships() : ?array
+    public function getStarships(): ?array
     {
         return $this->starships;
     }
     /**
      * @param array<string>|null $vehicles
      */
-    public function setVehicles(?array $vehicles) : void
+    public function setVehicles(?array $vehicles): void
     {
         $this->vehicles = $vehicles;
     }
     /**
      * @return array<string>|null
      */
-    public function getVehicles() : ?array
+    public function getVehicles(): ?array
     {
         return $this->vehicles;
     }
-    public function setUrl(?string $url) : void
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
     }
-    public function getUrl() : ?string
+    public function getUrl(): ?string
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created) : void
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
     {
         $this->created = $created;
     }
-    public function getCreated() : ?\PSX\DateTime\LocalDateTime
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->created;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited) : void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
         $this->edited = $edited;
     }
-    public function getEdited() : ?\PSX\DateTime\LocalDateTime
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
         return $this->edited;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
@@ -234,7 +234,7 @@ class People implements \JsonSerializable, \PSX\Record\RecordableInterface
         $record->put('edited', $this->edited);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

@@ -19,25 +19,25 @@ class FilmCollection extends Collection implements \JsonSerializable, \PSX\Recor
     /**
      * @param array<Film>|null $results
      */
-    public function setResults(?array $results) : void
+    public function setResults(?array $results): void
     {
         $this->results = $results;
     }
     /**
      * @return array<Film>|null
      */
-    public function getResults() : ?array
+    public function getResults(): ?array
     {
         return $this->results;
     }
-    public function toRecord() : \PSX\Record\RecordInterface
+    public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = parent::toRecord();
         $record->put('results', $this->results);
         return $record;
     }
-    public function jsonSerialize() : object
+    public function jsonSerialize(): object
     {
         return (object) $this->toRecord()->getAll();
     }

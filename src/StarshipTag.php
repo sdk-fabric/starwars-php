@@ -39,7 +39,7 @@ class StarshipTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, StarshipCollection::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(StarshipCollection::class));
 
             return $data;
         } catch (ClientException $e) {
@@ -79,7 +79,7 @@ class StarshipTag extends TagAbstract
             $response = $this->httpClient->request('GET', $url, $options);
             $body = $response->getBody();
 
-            $data = $this->parser->parse((string) $body, Starship::class);
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Starship::class));
 
             return $data;
         } catch (ClientException $e) {
