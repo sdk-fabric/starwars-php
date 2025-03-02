@@ -12,53 +12,53 @@ use PSX\Schema\Attribute\Key;
 #[Description('A Starship is a single transport craft that has hyperdrive capability')]
 class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('')]
+    #[Description('The name of this starship. The common name, such as "Death Star"')]
     protected ?string $name = null;
-    #[Description('')]
+    #[Description('The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station"')]
     protected ?string $model = null;
     #[Key('starship_class')]
-    #[Description('')]
+    #[Description('The class of this starship, such as "Starfighter" or "Deep Space Mobile Battlestation"')]
     protected ?string $starshipClass = null;
-    #[Description('')]
+    #[Description('The manufacturer of this starship. Comma separated if more than one')]
     protected ?string $manufacturer = null;
     #[Key('cost_in_credits')]
-    #[Description('')]
+    #[Description('The cost of this starship new, in galactic credits')]
     protected ?string $costInCredits = null;
-    #[Description('')]
+    #[Description('The length of this starship in meters')]
     protected ?string $length = null;
-    #[Description('')]
+    #[Description('The number of personnel needed to run or pilot this starship')]
     protected ?string $crew = null;
-    #[Description('')]
+    #[Description('The number of non-essential people this starship can transport')]
     protected ?string $passengers = null;
     #[Key('max_atmosphering_speed')]
-    #[Description('')]
+    #[Description('The maximum speed of this starship in the atmosphere. "N/A" if this starship is incapable of atmospheric flight')]
     protected ?string $maxAtmospheringSpeed = null;
     #[Key('hyperdrive_rating')]
-    #[Description('')]
+    #[Description('The class of this starships hyperdrive')]
     protected ?string $hyperdriveRating = null;
     #[Key('MGLT')]
-    #[Description('')]
+    #[Description('The Maximum number of Megalights this starship can travel in a standard hour. A "Megalight" is a standard unit of distance and has never been defined before within the Star Wars universe. This figure is only really useful for measuring the difference in speed of starships. We can assume it is similar to AU, the distance between our Sun (Sol) and Earth')]
     protected ?string $mGLT = null;
     #[Key('cargo_capacity')]
-    #[Description('')]
+    #[Description('The maximum number of kilograms that this starship can transport')]
     protected ?string $cargoCapacity = null;
-    #[Description('')]
+    #[Description('The maximum length of time that this starship can provide consumables for its entire crew without having to resupply')]
     protected ?string $consumables = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of Film URL Resources that this starship has appeared in')]
     protected ?array $films = null;
     /**
      * @var array<string>|null
      */
-    #[Description('')]
+    #[Description('An array of People URL Resources that this starship has been piloted by')]
     protected ?array $pilots = null;
-    #[Description('')]
+    #[Description('The hypermedia URL of this resource')]
     protected ?string $url = null;
-    #[Description('')]
+    #[Description('The ISO 8601 date format of the time that this resource was created')]
     protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('')]
+    #[Description('The ISO 8601 date format of the time that this resource was edited')]
     protected ?\PSX\DateTime\LocalDateTime $edited = null;
     public function setName(?string $name): void
     {
