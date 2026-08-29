@@ -1,0 +1,11 @@
+{
+  "typehub_user": "sdkfabric",
+  "typehub_document": "starwars",
+  "github_user": "sdk-fabric",
+  "github_repository": "starwars-php",
+
+  "name": "sdkfabric/starwars",
+  "description": "Starwars PHP SDK managed by SDK Fabric",
+  "namespace": "SdkFabric\\Starwars",
+  "website": "https://sdk-fabric.org"
+}
