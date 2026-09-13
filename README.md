@@ -17,37 +17,37 @@ require __DIR__ . '/vendor/autoload.php';
 $client = new \SdkFabric\Starwars\Client::build('[access_token]');
 
 // Get all the people.
-$response = $client->people()->getall('search');
+$response = $client->people()->getAll('search');
 
 // Get a specific people.
 $response = $client->people()->get('id');
 
 // Get all the films.
-$response = $client->film()->getall('search');
+$response = $client->film()->getAll('search');
 
 // Get a specific film.
 $response = $client->film()->get('id');
 
 // Get all the starships.
-$response = $client->starship()->getall('search');
+$response = $client->starship()->getAll('search');
 
 // Get a specific starship.
 $response = $client->starship()->get('id');
 
 // Get all the species.
-$response = $client->species()->getall('search');
+$response = $client->species()->getAll('search');
 
 // Get a specific species.
 $response = $client->species()->get('id');
 
 // Get all the vehicles.
-$response = $client->vehicle()->getall('search');
+$response = $client->vehicle()->getAll('search');
 
 // Get a specific vehicle.
 $response = $client->vehicle()->get('id');
 
 // Get all the planets.
-$response = $client->planet()->getall('search');
+$response = $client->planet()->getAll('search');
 
 // Get a specific planet.
 $response = $client->planet()->get('id');
