@@ -15,46 +15,6 @@ use Sdkgen\Client\TagAbstract;
 class PlanetTag extends TagAbstract
 {
     /**
-     * Get all the planets
-     *
-     * @param string|null $search
-     * @return PlanetCollection
-     * @throws ClientException
-     */
-    public function getAll(?string $search = null): PlanetCollection
-    {
-        $url = $this->parser->url('/planets', [
-        ]);
-
-        $options = [
-            'headers' => [
-            ],
-            'query' => $this->parser->query([
-                'search' => $search,
-            ], [
-            ]),
-        ];
-
-        try {
-            $response = $this->httpClient->request('GET', $url, $options);
-            $body = $response->getBody();
-
-            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(PlanetCollection::class));
-
-            return $data;
-        } catch (ClientException $e) {
-            throw $e;
-        } catch (BadResponseException $e) {
-            $body = $e->getResponse()->getBody();
-            $statusCode = $e->getResponse()->getStatusCode();
-
-            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
-        } catch (\Throwable $e) {
-            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
-        }
-    }
-
-    /**
      * Get a specific planet
      *
      * @param string $id
@@ -80,6 +40,46 @@ class PlanetTag extends TagAbstract
             $body = $response->getBody();
 
             $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Planet::class));
+
+            return $data;
+        } catch (ClientException $e) {
+            throw $e;
+        } catch (BadResponseException $e) {
+            $body = $e->getResponse()->getBody();
+            $statusCode = $e->getResponse()->getStatusCode();
+
+            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
+        } catch (\Throwable $e) {
+            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Get all the planets
+     *
+     * @param string|null $search
+     * @return PlanetCollection
+     * @throws ClientException
+     */
+    public function getAll(?string $search = null): PlanetCollection
+    {
+        $url = $this->parser->url('/planets', [
+        ]);
+
+        $options = [
+            'headers' => [
+            ],
+            'query' => $this->parser->query([
+                'search' => $search,
+            ], [
+            ]),
+        ];
+
+        try {
+            $response = $this->httpClient->request('GET', $url, $options);
+            $body = $response->getBody();
+
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(PlanetCollection::class));
 
             return $data;
         } catch (ClientException $e) {

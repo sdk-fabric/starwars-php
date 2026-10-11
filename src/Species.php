@@ -12,71 +12,47 @@ use PSX\Schema\Attribute\Key;
 #[Description('A Species is a type of person or character within the Star Wars Universe')]
 class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('')]
-    protected ?string $name = null;
-    #[Description('')]
-    protected ?string $classification = null;
-    #[Description('')]
-    protected ?string $designation = null;
     #[Key('average_height')]
     #[Description('')]
     protected ?string $averageHeight = null;
     #[Key('average_lifespan')]
     #[Description('')]
     protected ?string $averageLifespan = null;
+    #[Description('')]
+    protected ?string $classification = null;
+    #[Description('')]
+    protected ?\PSX\DateTime\LocalDateTime $created = null;
+    #[Description('')]
+    protected ?string $designation = null;
+    #[Description('')]
+    protected ?\PSX\DateTime\LocalDateTime $edited = null;
     #[Key('eye_colors')]
     #[Description('')]
     protected ?string $eyeColors = null;
-    #[Key('hair_colors')]
-    #[Description('')]
-    protected ?string $hairColors = null;
-    #[Key('skin_colors')]
-    #[Description('')]
-    protected ?string $skinColors = null;
-    #[Description('')]
-    protected ?string $language = null;
-    #[Description('')]
-    protected ?string $homeworld = null;
-    /**
-     * @var array<string>|null
-     */
-    #[Description('')]
-    protected ?array $people = null;
     /**
      * @var array<string>|null
      */
     #[Description('')]
     protected ?array $films = null;
+    #[Key('hair_colors')]
+    #[Description('')]
+    protected ?string $hairColors = null;
+    #[Description('')]
+    protected ?string $homeworld = null;
+    #[Description('')]
+    protected ?string $language = null;
+    #[Description('')]
+    protected ?string $name = null;
+    /**
+     * @var array<string>|null
+     */
+    #[Description('')]
+    protected ?array $people = null;
+    #[Key('skin_colors')]
+    #[Description('')]
+    protected ?string $skinColors = null;
     #[Description('')]
     protected ?string $url = null;
-    #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
-    }
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-    public function setClassification(?string $classification): void
-    {
-        $this->classification = $classification;
-    }
-    public function getClassification(): ?string
-    {
-        return $this->classification;
-    }
-    public function setDesignation(?string $designation): void
-    {
-        $this->designation = $designation;
-    }
-    public function getDesignation(): ?string
-    {
-        return $this->designation;
-    }
     public function setAverageHeight(?string $averageHeight): void
     {
         $this->averageHeight = $averageHeight;
@@ -93,6 +69,38 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->averageLifespan;
     }
+    public function setClassification(?string $classification): void
+    {
+        $this->classification = $classification;
+    }
+    public function getClassification(): ?string
+    {
+        return $this->classification;
+    }
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
+    {
+        $this->created = $created;
+    }
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->created;
+    }
+    public function setDesignation(?string $designation): void
+    {
+        $this->designation = $designation;
+    }
+    public function getDesignation(): ?string
+    {
+        return $this->designation;
+    }
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
+    {
+        $this->edited = $edited;
+    }
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->edited;
+    }
     public function setEyeColors(?string $eyeColors): void
     {
         $this->eyeColors = $eyeColors;
@@ -100,52 +108,6 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
     public function getEyeColors(): ?string
     {
         return $this->eyeColors;
-    }
-    public function setHairColors(?string $hairColors): void
-    {
-        $this->hairColors = $hairColors;
-    }
-    public function getHairColors(): ?string
-    {
-        return $this->hairColors;
-    }
-    public function setSkinColors(?string $skinColors): void
-    {
-        $this->skinColors = $skinColors;
-    }
-    public function getSkinColors(): ?string
-    {
-        return $this->skinColors;
-    }
-    public function setLanguage(?string $language): void
-    {
-        $this->language = $language;
-    }
-    public function getLanguage(): ?string
-    {
-        return $this->language;
-    }
-    public function setHomeworld(?string $homeworld): void
-    {
-        $this->homeworld = $homeworld;
-    }
-    public function getHomeworld(): ?string
-    {
-        return $this->homeworld;
-    }
-    /**
-     * @param array<string>|null $people
-     */
-    public function setPeople(?array $people): void
-    {
-        $this->people = $people;
-    }
-    /**
-     * @return array<string>|null
-     */
-    public function getPeople(): ?array
-    {
-        return $this->people;
     }
     /**
      * @param array<string>|null $films
@@ -161,6 +123,60 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->films;
     }
+    public function setHairColors(?string $hairColors): void
+    {
+        $this->hairColors = $hairColors;
+    }
+    public function getHairColors(): ?string
+    {
+        return $this->hairColors;
+    }
+    public function setHomeworld(?string $homeworld): void
+    {
+        $this->homeworld = $homeworld;
+    }
+    public function getHomeworld(): ?string
+    {
+        return $this->homeworld;
+    }
+    public function setLanguage(?string $language): void
+    {
+        $this->language = $language;
+    }
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    /**
+     * @param array<string>|null $people
+     */
+    public function setPeople(?array $people): void
+    {
+        $this->people = $people;
+    }
+    /**
+     * @return array<string>|null
+     */
+    public function getPeople(): ?array
+    {
+        return $this->people;
+    }
+    public function setSkinColors(?string $skinColors): void
+    {
+        $this->skinColors = $skinColors;
+    }
+    public function getSkinColors(): ?string
+    {
+        return $this->skinColors;
+    }
     public function setUrl(?string $url): void
     {
         $this->url = $url;
@@ -169,41 +185,28 @@ class Species implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
-    {
-        $this->created = $created;
-    }
-    public function getCreated(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->created;
-    }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
-    {
-        $this->edited = $edited;
-    }
-    public function getEdited(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->edited;
-    }
+    /**
+     * @return \PSX\Record\RecordInterface<mixed>
+     */
     public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
-        $record->put('name', $this->name);
-        $record->put('classification', $this->classification);
-        $record->put('designation', $this->designation);
         $record->put('average_height', $this->averageHeight);
         $record->put('average_lifespan', $this->averageLifespan);
-        $record->put('eye_colors', $this->eyeColors);
-        $record->put('hair_colors', $this->hairColors);
-        $record->put('skin_colors', $this->skinColors);
-        $record->put('language', $this->language);
-        $record->put('homeworld', $this->homeworld);
-        $record->put('people', $this->people);
-        $record->put('films', $this->films);
-        $record->put('url', $this->url);
+        $record->put('classification', $this->classification);
         $record->put('created', $this->created);
+        $record->put('designation', $this->designation);
         $record->put('edited', $this->edited);
+        $record->put('eye_colors', $this->eyeColors);
+        $record->put('films', $this->films);
+        $record->put('hair_colors', $this->hairColors);
+        $record->put('homeworld', $this->homeworld);
+        $record->put('language', $this->language);
+        $record->put('name', $this->name);
+        $record->put('people', $this->people);
+        $record->put('skin_colors', $this->skinColors);
+        $record->put('url', $this->url);
         return $record;
     }
     public function jsonSerialize(): object

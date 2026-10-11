@@ -12,30 +12,6 @@ use PSX\Schema\Attribute\Key;
 #[Description('A Starship is a single transport craft that has hyperdrive capability')]
 class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('The name of this starship. The common name, such as "Death Star"')]
-    protected ?string $name = null;
-    #[Description('The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station"')]
-    protected ?string $model = null;
-    #[Key('starship_class')]
-    #[Description('The class of this starship, such as "Starfighter" or "Deep Space Mobile Battlestation"')]
-    protected ?string $starshipClass = null;
-    #[Description('The manufacturer of this starship. Comma separated if more than one')]
-    protected ?string $manufacturer = null;
-    #[Key('cost_in_credits')]
-    #[Description('The cost of this starship new, in galactic credits')]
-    protected ?string $costInCredits = null;
-    #[Description('The length of this starship in meters')]
-    protected ?string $length = null;
-    #[Description('The number of personnel needed to run or pilot this starship')]
-    protected ?string $crew = null;
-    #[Description('The number of non-essential people this starship can transport')]
-    protected ?string $passengers = null;
-    #[Key('max_atmosphering_speed')]
-    #[Description('The maximum speed of this starship in the atmosphere. "N/A" if this starship is incapable of atmospheric flight')]
-    protected ?string $maxAtmospheringSpeed = null;
-    #[Key('hyperdrive_rating')]
-    #[Description('The class of this starships hyperdrive')]
-    protected ?string $hyperdriveRating = null;
     #[Key('MGLT')]
     #[Description('The Maximum number of Megalights this starship can travel in a standard hour. A "Megalight" is a standard unit of distance and has never been defined before within the Star Wars universe. This figure is only really useful for measuring the difference in speed of starships. We can assume it is similar to AU, the distance between our Sun (Sol) and Earth')]
     protected ?string $mGLT = null;
@@ -44,102 +20,46 @@ class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?string $cargoCapacity = null;
     #[Description('The maximum length of time that this starship can provide consumables for its entire crew without having to resupply')]
     protected ?string $consumables = null;
+    #[Key('cost_in_credits')]
+    #[Description('The cost of this starship new, in galactic credits')]
+    protected ?string $costInCredits = null;
+    #[Description('The ISO 8601 date format of the time that this resource was created')]
+    protected ?\PSX\DateTime\LocalDateTime $created = null;
+    #[Description('The number of personnel needed to run or pilot this starship')]
+    protected ?string $crew = null;
+    #[Description('The ISO 8601 date format of the time that this resource was edited')]
+    protected ?\PSX\DateTime\LocalDateTime $edited = null;
     /**
      * @var array<string>|null
      */
     #[Description('An array of Film URL Resources that this starship has appeared in')]
     protected ?array $films = null;
+    #[Key('hyperdrive_rating')]
+    #[Description('The class of this starships hyperdrive')]
+    protected ?string $hyperdriveRating = null;
+    #[Description('The length of this starship in meters')]
+    protected ?string $length = null;
+    #[Description('The manufacturer of this starship. Comma separated if more than one')]
+    protected ?string $manufacturer = null;
+    #[Key('max_atmosphering_speed')]
+    #[Description('The maximum speed of this starship in the atmosphere. "N/A" if this starship is incapable of atmospheric flight')]
+    protected ?string $maxAtmospheringSpeed = null;
+    #[Description('The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station"')]
+    protected ?string $model = null;
+    #[Description('The name of this starship. The common name, such as "Death Star"')]
+    protected ?string $name = null;
+    #[Description('The number of non-essential people this starship can transport')]
+    protected ?string $passengers = null;
     /**
      * @var array<string>|null
      */
     #[Description('An array of People URL Resources that this starship has been piloted by')]
     protected ?array $pilots = null;
+    #[Key('starship_class')]
+    #[Description('The class of this starship, such as "Starfighter" or "Deep Space Mobile Battlestation"')]
+    protected ?string $starshipClass = null;
     #[Description('The hypermedia URL of this resource')]
     protected ?string $url = null;
-    #[Description('The ISO 8601 date format of the time that this resource was created')]
-    protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('The ISO 8601 date format of the time that this resource was edited')]
-    protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
-    }
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-    public function setModel(?string $model): void
-    {
-        $this->model = $model;
-    }
-    public function getModel(): ?string
-    {
-        return $this->model;
-    }
-    public function setStarshipClass(?string $starshipClass): void
-    {
-        $this->starshipClass = $starshipClass;
-    }
-    public function getStarshipClass(): ?string
-    {
-        return $this->starshipClass;
-    }
-    public function setManufacturer(?string $manufacturer): void
-    {
-        $this->manufacturer = $manufacturer;
-    }
-    public function getManufacturer(): ?string
-    {
-        return $this->manufacturer;
-    }
-    public function setCostInCredits(?string $costInCredits): void
-    {
-        $this->costInCredits = $costInCredits;
-    }
-    public function getCostInCredits(): ?string
-    {
-        return $this->costInCredits;
-    }
-    public function setLength(?string $length): void
-    {
-        $this->length = $length;
-    }
-    public function getLength(): ?string
-    {
-        return $this->length;
-    }
-    public function setCrew(?string $crew): void
-    {
-        $this->crew = $crew;
-    }
-    public function getCrew(): ?string
-    {
-        return $this->crew;
-    }
-    public function setPassengers(?string $passengers): void
-    {
-        $this->passengers = $passengers;
-    }
-    public function getPassengers(): ?string
-    {
-        return $this->passengers;
-    }
-    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed): void
-    {
-        $this->maxAtmospheringSpeed = $maxAtmospheringSpeed;
-    }
-    public function getMaxAtmospheringSpeed(): ?string
-    {
-        return $this->maxAtmospheringSpeed;
-    }
-    public function setHyperdriveRating(?string $hyperdriveRating): void
-    {
-        $this->hyperdriveRating = $hyperdriveRating;
-    }
-    public function getHyperdriveRating(): ?string
-    {
-        return $this->hyperdriveRating;
-    }
     public function setMGLT(?string $mGLT): void
     {
         $this->mGLT = $mGLT;
@@ -164,6 +84,38 @@ class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->consumables;
     }
+    public function setCostInCredits(?string $costInCredits): void
+    {
+        $this->costInCredits = $costInCredits;
+    }
+    public function getCostInCredits(): ?string
+    {
+        return $this->costInCredits;
+    }
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
+    {
+        $this->created = $created;
+    }
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->created;
+    }
+    public function setCrew(?string $crew): void
+    {
+        $this->crew = $crew;
+    }
+    public function getCrew(): ?string
+    {
+        return $this->crew;
+    }
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
+    {
+        $this->edited = $edited;
+    }
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->edited;
+    }
     /**
      * @param array<string>|null $films
      */
@@ -177,6 +129,62 @@ class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
     public function getFilms(): ?array
     {
         return $this->films;
+    }
+    public function setHyperdriveRating(?string $hyperdriveRating): void
+    {
+        $this->hyperdriveRating = $hyperdriveRating;
+    }
+    public function getHyperdriveRating(): ?string
+    {
+        return $this->hyperdriveRating;
+    }
+    public function setLength(?string $length): void
+    {
+        $this->length = $length;
+    }
+    public function getLength(): ?string
+    {
+        return $this->length;
+    }
+    public function setManufacturer(?string $manufacturer): void
+    {
+        $this->manufacturer = $manufacturer;
+    }
+    public function getManufacturer(): ?string
+    {
+        return $this->manufacturer;
+    }
+    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed): void
+    {
+        $this->maxAtmospheringSpeed = $maxAtmospheringSpeed;
+    }
+    public function getMaxAtmospheringSpeed(): ?string
+    {
+        return $this->maxAtmospheringSpeed;
+    }
+    public function setModel(?string $model): void
+    {
+        $this->model = $model;
+    }
+    public function getModel(): ?string
+    {
+        return $this->model;
+    }
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function setPassengers(?string $passengers): void
+    {
+        $this->passengers = $passengers;
+    }
+    public function getPassengers(): ?string
+    {
+        return $this->passengers;
     }
     /**
      * @param array<string>|null $pilots
@@ -192,6 +200,14 @@ class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->pilots;
     }
+    public function setStarshipClass(?string $starshipClass): void
+    {
+        $this->starshipClass = $starshipClass;
+    }
+    public function getStarshipClass(): ?string
+    {
+        return $this->starshipClass;
+    }
     public function setUrl(?string $url): void
     {
         $this->url = $url;
@@ -200,44 +216,31 @@ class Starship implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
-    {
-        $this->created = $created;
-    }
-    public function getCreated(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->created;
-    }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
-    {
-        $this->edited = $edited;
-    }
-    public function getEdited(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->edited;
-    }
+    /**
+     * @return \PSX\Record\RecordInterface<mixed>
+     */
     public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
-        $record->put('name', $this->name);
-        $record->put('model', $this->model);
-        $record->put('starship_class', $this->starshipClass);
-        $record->put('manufacturer', $this->manufacturer);
-        $record->put('cost_in_credits', $this->costInCredits);
-        $record->put('length', $this->length);
-        $record->put('crew', $this->crew);
-        $record->put('passengers', $this->passengers);
-        $record->put('max_atmosphering_speed', $this->maxAtmospheringSpeed);
-        $record->put('hyperdrive_rating', $this->hyperdriveRating);
         $record->put('MGLT', $this->mGLT);
         $record->put('cargo_capacity', $this->cargoCapacity);
         $record->put('consumables', $this->consumables);
-        $record->put('films', $this->films);
-        $record->put('pilots', $this->pilots);
-        $record->put('url', $this->url);
+        $record->put('cost_in_credits', $this->costInCredits);
         $record->put('created', $this->created);
+        $record->put('crew', $this->crew);
         $record->put('edited', $this->edited);
+        $record->put('films', $this->films);
+        $record->put('hyperdrive_rating', $this->hyperdriveRating);
+        $record->put('length', $this->length);
+        $record->put('manufacturer', $this->manufacturer);
+        $record->put('max_atmosphering_speed', $this->maxAtmospheringSpeed);
+        $record->put('model', $this->model);
+        $record->put('name', $this->name);
+        $record->put('passengers', $this->passengers);
+        $record->put('pilots', $this->pilots);
+        $record->put('starship_class', $this->starshipClass);
+        $record->put('url', $this->url);
         return $record;
     }
     public function jsonSerialize(): object

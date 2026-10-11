@@ -13,49 +13,57 @@ use PSX\Schema\Attribute\Key;
 class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
     #[Description('')]
-    protected ?string $name = null;
-    #[Description('')]
-    protected ?string $diameter = null;
-    #[Key('rotation_period')]
-    #[Description('')]
-    protected ?string $rotationPeriod = null;
-    #[Key('orbital_period')]
-    #[Description('')]
-    protected ?string $orbitalPeriod = null;
-    #[Description('')]
-    protected ?string $gravity = null;
-    #[Description('')]
-    protected ?string $population = null;
-    #[Description('')]
     protected ?string $climate = null;
     #[Description('')]
-    protected ?string $terrain = null;
-    #[Key('surface_water')]
+    protected ?\PSX\DateTime\LocalDateTime $created = null;
     #[Description('')]
-    protected ?string $surfaceWater = null;
-    /**
-     * @var array<string>|null
-     */
+    protected ?string $diameter = null;
     #[Description('')]
-    protected ?array $residents = null;
+    protected ?\PSX\DateTime\LocalDateTime $edited = null;
     /**
      * @var array<string>|null
      */
     #[Description('')]
     protected ?array $films = null;
     #[Description('')]
+    protected ?string $gravity = null;
+    #[Description('')]
+    protected ?string $name = null;
+    #[Key('orbital_period')]
+    #[Description('')]
+    protected ?string $orbitalPeriod = null;
+    #[Description('')]
+    protected ?string $population = null;
+    /**
+     * @var array<string>|null
+     */
+    #[Description('')]
+    protected ?array $residents = null;
+    #[Key('rotation_period')]
+    #[Description('')]
+    protected ?string $rotationPeriod = null;
+    #[Key('surface_water')]
+    #[Description('')]
+    protected ?string $surfaceWater = null;
+    #[Description('')]
+    protected ?string $terrain = null;
+    #[Description('')]
     protected ?string $url = null;
-    #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name): void
+    public function setClimate(?string $climate): void
     {
-        $this->name = $name;
+        $this->climate = $climate;
     }
-    public function getName(): ?string
+    public function getClimate(): ?string
     {
-        return $this->name;
+        return $this->climate;
+    }
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
+    {
+        $this->created = $created;
+    }
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->created;
     }
     public function setDiameter(?string $diameter): void
     {
@@ -65,75 +73,13 @@ class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->diameter;
     }
-    public function setRotationPeriod(?string $rotationPeriod): void
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
     {
-        $this->rotationPeriod = $rotationPeriod;
+        $this->edited = $edited;
     }
-    public function getRotationPeriod(): ?string
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
     {
-        return $this->rotationPeriod;
-    }
-    public function setOrbitalPeriod(?string $orbitalPeriod): void
-    {
-        $this->orbitalPeriod = $orbitalPeriod;
-    }
-    public function getOrbitalPeriod(): ?string
-    {
-        return $this->orbitalPeriod;
-    }
-    public function setGravity(?string $gravity): void
-    {
-        $this->gravity = $gravity;
-    }
-    public function getGravity(): ?string
-    {
-        return $this->gravity;
-    }
-    public function setPopulation(?string $population): void
-    {
-        $this->population = $population;
-    }
-    public function getPopulation(): ?string
-    {
-        return $this->population;
-    }
-    public function setClimate(?string $climate): void
-    {
-        $this->climate = $climate;
-    }
-    public function getClimate(): ?string
-    {
-        return $this->climate;
-    }
-    public function setTerrain(?string $terrain): void
-    {
-        $this->terrain = $terrain;
-    }
-    public function getTerrain(): ?string
-    {
-        return $this->terrain;
-    }
-    public function setSurfaceWater(?string $surfaceWater): void
-    {
-        $this->surfaceWater = $surfaceWater;
-    }
-    public function getSurfaceWater(): ?string
-    {
-        return $this->surfaceWater;
-    }
-    /**
-     * @param array<string>|null $residents
-     */
-    public function setResidents(?array $residents): void
-    {
-        $this->residents = $residents;
-    }
-    /**
-     * @return array<string>|null
-     */
-    public function getResidents(): ?array
-    {
-        return $this->residents;
+        return $this->edited;
     }
     /**
      * @param array<string>|null $films
@@ -149,6 +95,76 @@ class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->films;
     }
+    public function setGravity(?string $gravity): void
+    {
+        $this->gravity = $gravity;
+    }
+    public function getGravity(): ?string
+    {
+        return $this->gravity;
+    }
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function setOrbitalPeriod(?string $orbitalPeriod): void
+    {
+        $this->orbitalPeriod = $orbitalPeriod;
+    }
+    public function getOrbitalPeriod(): ?string
+    {
+        return $this->orbitalPeriod;
+    }
+    public function setPopulation(?string $population): void
+    {
+        $this->population = $population;
+    }
+    public function getPopulation(): ?string
+    {
+        return $this->population;
+    }
+    /**
+     * @param array<string>|null $residents
+     */
+    public function setResidents(?array $residents): void
+    {
+        $this->residents = $residents;
+    }
+    /**
+     * @return array<string>|null
+     */
+    public function getResidents(): ?array
+    {
+        return $this->residents;
+    }
+    public function setRotationPeriod(?string $rotationPeriod): void
+    {
+        $this->rotationPeriod = $rotationPeriod;
+    }
+    public function getRotationPeriod(): ?string
+    {
+        return $this->rotationPeriod;
+    }
+    public function setSurfaceWater(?string $surfaceWater): void
+    {
+        $this->surfaceWater = $surfaceWater;
+    }
+    public function getSurfaceWater(): ?string
+    {
+        return $this->surfaceWater;
+    }
+    public function setTerrain(?string $terrain): void
+    {
+        $this->terrain = $terrain;
+    }
+    public function getTerrain(): ?string
+    {
+        return $this->terrain;
+    }
     public function setUrl(?string $url): void
     {
         $this->url = $url;
@@ -157,40 +173,27 @@ class Planet implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
-    {
-        $this->created = $created;
-    }
-    public function getCreated(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->created;
-    }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
-    {
-        $this->edited = $edited;
-    }
-    public function getEdited(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->edited;
-    }
+    /**
+     * @return \PSX\Record\RecordInterface<mixed>
+     */
     public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
-        $record->put('name', $this->name);
-        $record->put('diameter', $this->diameter);
-        $record->put('rotation_period', $this->rotationPeriod);
-        $record->put('orbital_period', $this->orbitalPeriod);
-        $record->put('gravity', $this->gravity);
-        $record->put('population', $this->population);
         $record->put('climate', $this->climate);
-        $record->put('terrain', $this->terrain);
-        $record->put('surface_water', $this->surfaceWater);
-        $record->put('residents', $this->residents);
-        $record->put('films', $this->films);
-        $record->put('url', $this->url);
         $record->put('created', $this->created);
+        $record->put('diameter', $this->diameter);
         $record->put('edited', $this->edited);
+        $record->put('films', $this->films);
+        $record->put('gravity', $this->gravity);
+        $record->put('name', $this->name);
+        $record->put('orbital_period', $this->orbitalPeriod);
+        $record->put('population', $this->population);
+        $record->put('residents', $this->residents);
+        $record->put('rotation_period', $this->rotationPeriod);
+        $record->put('surface_water', $this->surfaceWater);
+        $record->put('terrain', $this->terrain);
+        $record->put('url', $this->url);
         return $record;
     }
     public function jsonSerialize(): object

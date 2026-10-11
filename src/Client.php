@@ -17,14 +17,6 @@ use Sdkgen\Client\TokenStoreInterface;
 
 class Client extends ClientAbstract
 {
-    public function people(): PeopleTag
-    {
-        return new PeopleTag(
-            $this->httpClient,
-            $this->parser
-        );
-    }
-
     public function film(): FilmTag
     {
         return new FilmTag(
@@ -33,9 +25,17 @@ class Client extends ClientAbstract
         );
     }
 
-    public function starship(): StarshipTag
+    public function people(): PeopleTag
     {
-        return new StarshipTag(
+        return new PeopleTag(
+            $this->httpClient,
+            $this->parser
+        );
+    }
+
+    public function planet(): PlanetTag
+    {
+        return new PlanetTag(
             $this->httpClient,
             $this->parser
         );
@@ -49,17 +49,17 @@ class Client extends ClientAbstract
         );
     }
 
-    public function vehicle(): VehicleTag
+    public function starship(): StarshipTag
     {
-        return new VehicleTag(
+        return new StarshipTag(
             $this->httpClient,
             $this->parser
         );
     }
 
-    public function planet(): PlanetTag
+    public function vehicle(): VehicleTag
     {
-        return new PlanetTag(
+        return new VehicleTag(
             $this->httpClient,
             $this->parser
         );

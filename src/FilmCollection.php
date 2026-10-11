@@ -30,6 +30,9 @@ class FilmCollection extends Collection implements \JsonSerializable, \PSX\Recor
     {
         return $this->results;
     }
+    /**
+     * @return \PSX\Record\RecordInterface<mixed>
+     */
     public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */

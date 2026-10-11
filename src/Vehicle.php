@@ -12,37 +12,38 @@ use PSX\Schema\Attribute\Key;
 #[Description('A Vehicle is a single transport craft that does not have hyperdrive capability')]
 class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
 {
-    #[Description('')]
-    protected ?string $name = null;
-    #[Description('')]
-    protected ?string $model = null;
-    #[Key('vehicle_class')]
-    #[Description('')]
-    protected ?string $vehicleClass = null;
-    #[Description('')]
-    protected ?string $manufacturer = null;
-    #[Description('')]
-    protected ?string $length = null;
-    #[Key('cost_in_credits')]
-    #[Description('')]
-    protected ?string $costInCredits = null;
-    #[Description('')]
-    protected ?string $crew = null;
-    #[Description('')]
-    protected ?string $passengers = null;
-    #[Key('max_atmosphering_speed')]
-    #[Description('')]
-    protected ?string $maxAtmospheringSpeed = null;
     #[Key('cargo_capacity')]
     #[Description('')]
     protected ?string $cargoCapacity = null;
     #[Description('')]
     protected ?string $consumables = null;
+    #[Key('cost_in_credits')]
+    #[Description('')]
+    protected ?string $costInCredits = null;
+    #[Description('')]
+    protected ?\PSX\DateTime\LocalDateTime $created = null;
+    #[Description('')]
+    protected ?string $crew = null;
+    #[Description('')]
+    protected ?\PSX\DateTime\LocalDateTime $edited = null;
     /**
      * @var array<string>|null
      */
     #[Description('')]
     protected ?array $films = null;
+    #[Description('')]
+    protected ?string $length = null;
+    #[Description('')]
+    protected ?string $manufacturer = null;
+    #[Key('max_atmosphering_speed')]
+    #[Description('')]
+    protected ?string $maxAtmospheringSpeed = null;
+    #[Description('')]
+    protected ?string $model = null;
+    #[Description('')]
+    protected ?string $name = null;
+    #[Description('')]
+    protected ?string $passengers = null;
     /**
      * @var array<string>|null
      */
@@ -50,82 +51,9 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
     protected ?array $pilots = null;
     #[Description('')]
     protected ?string $url = null;
+    #[Key('vehicle_class')]
     #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $created = null;
-    #[Description('')]
-    protected ?\PSX\DateTime\LocalDateTime $edited = null;
-    public function setName(?string $name): void
-    {
-        $this->name = $name;
-    }
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-    public function setModel(?string $model): void
-    {
-        $this->model = $model;
-    }
-    public function getModel(): ?string
-    {
-        return $this->model;
-    }
-    public function setVehicleClass(?string $vehicleClass): void
-    {
-        $this->vehicleClass = $vehicleClass;
-    }
-    public function getVehicleClass(): ?string
-    {
-        return $this->vehicleClass;
-    }
-    public function setManufacturer(?string $manufacturer): void
-    {
-        $this->manufacturer = $manufacturer;
-    }
-    public function getManufacturer(): ?string
-    {
-        return $this->manufacturer;
-    }
-    public function setLength(?string $length): void
-    {
-        $this->length = $length;
-    }
-    public function getLength(): ?string
-    {
-        return $this->length;
-    }
-    public function setCostInCredits(?string $costInCredits): void
-    {
-        $this->costInCredits = $costInCredits;
-    }
-    public function getCostInCredits(): ?string
-    {
-        return $this->costInCredits;
-    }
-    public function setCrew(?string $crew): void
-    {
-        $this->crew = $crew;
-    }
-    public function getCrew(): ?string
-    {
-        return $this->crew;
-    }
-    public function setPassengers(?string $passengers): void
-    {
-        $this->passengers = $passengers;
-    }
-    public function getPassengers(): ?string
-    {
-        return $this->passengers;
-    }
-    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed): void
-    {
-        $this->maxAtmospheringSpeed = $maxAtmospheringSpeed;
-    }
-    public function getMaxAtmospheringSpeed(): ?string
-    {
-        return $this->maxAtmospheringSpeed;
-    }
+    protected ?string $vehicleClass = null;
     public function setCargoCapacity(?string $cargoCapacity): void
     {
         $this->cargoCapacity = $cargoCapacity;
@@ -142,6 +70,38 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->consumables;
     }
+    public function setCostInCredits(?string $costInCredits): void
+    {
+        $this->costInCredits = $costInCredits;
+    }
+    public function getCostInCredits(): ?string
+    {
+        return $this->costInCredits;
+    }
+    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
+    {
+        $this->created = $created;
+    }
+    public function getCreated(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->created;
+    }
+    public function setCrew(?string $crew): void
+    {
+        $this->crew = $crew;
+    }
+    public function getCrew(): ?string
+    {
+        return $this->crew;
+    }
+    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
+    {
+        $this->edited = $edited;
+    }
+    public function getEdited(): ?\PSX\DateTime\LocalDateTime
+    {
+        return $this->edited;
+    }
     /**
      * @param array<string>|null $films
      */
@@ -155,6 +115,54 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
     public function getFilms(): ?array
     {
         return $this->films;
+    }
+    public function setLength(?string $length): void
+    {
+        $this->length = $length;
+    }
+    public function getLength(): ?string
+    {
+        return $this->length;
+    }
+    public function setManufacturer(?string $manufacturer): void
+    {
+        $this->manufacturer = $manufacturer;
+    }
+    public function getManufacturer(): ?string
+    {
+        return $this->manufacturer;
+    }
+    public function setMaxAtmospheringSpeed(?string $maxAtmospheringSpeed): void
+    {
+        $this->maxAtmospheringSpeed = $maxAtmospheringSpeed;
+    }
+    public function getMaxAtmospheringSpeed(): ?string
+    {
+        return $this->maxAtmospheringSpeed;
+    }
+    public function setModel(?string $model): void
+    {
+        $this->model = $model;
+    }
+    public function getModel(): ?string
+    {
+        return $this->model;
+    }
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function setPassengers(?string $passengers): void
+    {
+        $this->passengers = $passengers;
+    }
+    public function getPassengers(): ?string
+    {
+        return $this->passengers;
     }
     /**
      * @param array<string>|null $pilots
@@ -178,42 +186,37 @@ class Vehicle implements \JsonSerializable, \PSX\Record\RecordableInterface
     {
         return $this->url;
     }
-    public function setCreated(?\PSX\DateTime\LocalDateTime $created): void
+    public function setVehicleClass(?string $vehicleClass): void
     {
-        $this->created = $created;
+        $this->vehicleClass = $vehicleClass;
     }
-    public function getCreated(): ?\PSX\DateTime\LocalDateTime
+    public function getVehicleClass(): ?string
     {
-        return $this->created;
+        return $this->vehicleClass;
     }
-    public function setEdited(?\PSX\DateTime\LocalDateTime $edited): void
-    {
-        $this->edited = $edited;
-    }
-    public function getEdited(): ?\PSX\DateTime\LocalDateTime
-    {
-        return $this->edited;
-    }
+    /**
+     * @return \PSX\Record\RecordInterface<mixed>
+     */
     public function toRecord(): \PSX\Record\RecordInterface
     {
         /** @var \PSX\Record\Record<mixed> $record */
         $record = new \PSX\Record\Record();
-        $record->put('name', $this->name);
-        $record->put('model', $this->model);
-        $record->put('vehicle_class', $this->vehicleClass);
-        $record->put('manufacturer', $this->manufacturer);
-        $record->put('length', $this->length);
-        $record->put('cost_in_credits', $this->costInCredits);
-        $record->put('crew', $this->crew);
-        $record->put('passengers', $this->passengers);
-        $record->put('max_atmosphering_speed', $this->maxAtmospheringSpeed);
         $record->put('cargo_capacity', $this->cargoCapacity);
         $record->put('consumables', $this->consumables);
+        $record->put('cost_in_credits', $this->costInCredits);
+        $record->put('created', $this->created);
+        $record->put('crew', $this->crew);
+        $record->put('edited', $this->edited);
         $record->put('films', $this->films);
+        $record->put('length', $this->length);
+        $record->put('manufacturer', $this->manufacturer);
+        $record->put('max_atmosphering_speed', $this->maxAtmospheringSpeed);
+        $record->put('model', $this->model);
+        $record->put('name', $this->name);
+        $record->put('passengers', $this->passengers);
         $record->put('pilots', $this->pilots);
         $record->put('url', $this->url);
-        $record->put('created', $this->created);
-        $record->put('edited', $this->edited);
+        $record->put('vehicle_class', $this->vehicleClass);
         return $record;
     }
     public function jsonSerialize(): object

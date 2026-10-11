@@ -15,46 +15,6 @@ use Sdkgen\Client\TagAbstract;
 class FilmTag extends TagAbstract
 {
     /**
-     * Get all the films
-     *
-     * @param string|null $search
-     * @return FilmCollection
-     * @throws ClientException
-     */
-    public function getAll(?string $search = null): FilmCollection
-    {
-        $url = $this->parser->url('/films', [
-        ]);
-
-        $options = [
-            'headers' => [
-            ],
-            'query' => $this->parser->query([
-                'search' => $search,
-            ], [
-            ]),
-        ];
-
-        try {
-            $response = $this->httpClient->request('GET', $url, $options);
-            $body = $response->getBody();
-
-            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(FilmCollection::class));
-
-            return $data;
-        } catch (ClientException $e) {
-            throw $e;
-        } catch (BadResponseException $e) {
-            $body = $e->getResponse()->getBody();
-            $statusCode = $e->getResponse()->getStatusCode();
-
-            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
-        } catch (\Throwable $e) {
-            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
-        }
-    }
-
-    /**
      * Get a specific film
      *
      * @param string $id
@@ -80,6 +40,46 @@ class FilmTag extends TagAbstract
             $body = $response->getBody();
 
             $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(Film::class));
+
+            return $data;
+        } catch (ClientException $e) {
+            throw $e;
+        } catch (BadResponseException $e) {
+            $body = $e->getResponse()->getBody();
+            $statusCode = $e->getResponse()->getStatusCode();
+
+            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
+        } catch (\Throwable $e) {
+            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Get all the films
+     *
+     * @param string|null $search
+     * @return FilmCollection
+     * @throws ClientException
+     */
+    public function getAll(?string $search = null): FilmCollection
+    {
+        $url = $this->parser->url('/films', [
+        ]);
+
+        $options = [
+            'headers' => [
+            ],
+            'query' => $this->parser->query([
+                'search' => $search,
+            ], [
+            ]),
+        ];
+
+        try {
+            $response = $this->httpClient->request('GET', $url, $options);
+            $body = $response->getBody();
+
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(FilmCollection::class));
 
             return $data;
         } catch (ClientException $e) {

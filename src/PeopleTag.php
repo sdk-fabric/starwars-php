@@ -15,6 +15,46 @@ use Sdkgen\Client\TagAbstract;
 class PeopleTag extends TagAbstract
 {
     /**
+     * Get a specific person
+     *
+     * @param string $id
+     * @return People
+     * @throws ClientException
+     */
+    public function get(string $id): People
+    {
+        $url = $this->parser->url('/people/:id', [
+            'id' => $id,
+        ]);
+
+        $options = [
+            'headers' => [
+            ],
+            'query' => $this->parser->query([
+            ], [
+            ]),
+        ];
+
+        try {
+            $response = $this->httpClient->request('GET', $url, $options);
+            $body = $response->getBody();
+
+            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(People::class));
+
+            return $data;
+        } catch (ClientException $e) {
+            throw $e;
+        } catch (BadResponseException $e) {
+            $body = $e->getResponse()->getBody();
+            $statusCode = $e->getResponse()->getStatusCode();
+
+            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
+        } catch (\Throwable $e) {
+            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
+        }
+    }
+
+    /**
      * Get all the people
      *
      * @param string|null $search
@@ -40,46 +80,6 @@ class PeopleTag extends TagAbstract
             $body = $response->getBody();
 
             $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(PeopleCollection::class));
-
-            return $data;
-        } catch (ClientException $e) {
-            throw $e;
-        } catch (BadResponseException $e) {
-            $body = $e->getResponse()->getBody();
-            $statusCode = $e->getResponse()->getStatusCode();
-
-            throw new UnknownStatusCodeException('The server returned an unknown status code: ' . $statusCode);
-        } catch (\Throwable $e) {
-            throw new ClientException('An unknown error occurred: ' . $e->getMessage());
-        }
-    }
-
-    /**
-     * Get a specific people
-     *
-     * @param string $id
-     * @return People
-     * @throws ClientException
-     */
-    public function get(string $id): People
-    {
-        $url = $this->parser->url('/people/:id', [
-            'id' => $id,
-        ]);
-
-        $options = [
-            'headers' => [
-            ],
-            'query' => $this->parser->query([
-            ], [
-            ]),
-        ];
-
-        try {
-            $response = $this->httpClient->request('GET', $url, $options);
-            $body = $response->getBody();
-
-            $data = $this->parser->parse((string) $body, \PSX\Schema\SchemaSource::fromClass(People::class));
 
             return $data;
         } catch (ClientException $e) {
